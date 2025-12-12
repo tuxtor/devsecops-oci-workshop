@@ -1,0 +1,28 @@
+name: full-build.yml
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  quarkus:
+    name: "Quarkus"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: "temurin"
+          java-version: "21"
+          cache: "maven"
+      - name: Run Maven tests
+        run: ./mvnw verify spotbugs:check
+        working-directory: quarkus-cloud-native-workload
