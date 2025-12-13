@@ -1,4 +1,4 @@
-# DevSecOps Workshop Tutorial
+# DevSec(minus Ops) with Java - Workshop Tutorial
 
 > A comprehensive hands-on workshop for implementing DevSecOps practices with Java, Quarkus, and cloud-native technologies
 
@@ -647,6 +647,13 @@ This creates a Docker image with the tag specified in `jkube.generator.name`.
 ./mvnw k8s:resource
 ```
 
+### Create a k3d cluster (Really optional)
+
+```bash
+k3d cluster create k3d-cluster
+# k3d cluster delete k3d-cluster
+```
+
 ### Deploy to Kubernetes
 
 ```bash
@@ -663,8 +670,6 @@ This creates a Docker image with the tag specified in `jkube.generator.name`.
 **Example generated resources**:
 - Deployment
 - Service
-- ConfigMap
-- ServiceAccount
 
 **Commit Reference**: [23f7471](https://github.com/tuxtor/devsecops-oci-workshop/commit/23f747128dbce54649233ce1b0899ffe8fcdeabb)
 
