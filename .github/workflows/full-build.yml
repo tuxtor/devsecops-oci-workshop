@@ -26,3 +26,14 @@ jobs:
       - name: Run Maven tests
         run: ./mvnw verify spotbugs:check
         working-directory: quarkus-cloud-native-workload
+      - name: Docker build
+        run: ./mvnw k8s:build
+        working-directory: quarkus-cloud-native-workload
+      - name: Run Trivy security scan (Docker)
+        uses: aquasecurity/trivy-action@0.33.1
+        with:
+          scan-type: "image"
+          image-ref: docker.io/tuxtor/quarkus-cloud-native-workload:latest
+          format: "table"
+          exit-code: "0"
+          severity: 'CRITICAL,HIGH'
