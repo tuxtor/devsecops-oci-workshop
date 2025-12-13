@@ -9,20 +9,20 @@
 
 ## Commits guide
 
-| # | Date | SHA | Message |
-|---|------|-----|---------|
-| 1 | 2025-12-12 22:39:10 | [30dbf41](https://github.com/tuxtor/devsecops-oci-workshop/commit/30dbf41d55b273fce6498ca87ed0271a1bb75d2e) | Adding github codespace definition *(initial commit)* |
-| 2 | 2025-12-12 22:40:57 | [7b182ba](https://github.com/tuxtor/devsecops-oci-workshop/commit/7b182ba7ec5122a3e17f4831da71a70f0387f901) | Adding github codespace definition |
-| 3 | 2025-12-12 23:13:34 | [b64377c](https://github.com/tuxtor/devsecops-oci-workshop/commit/b64377c04ff41cdc3bec6eb2a195cf46af79457a) | Adding quarkus skeleton |
-| 4 | 2025-12-12 23:19:09 | [b3848b0](https://github.com/tuxtor/devsecops-oci-workshop/commit/b3848b0ee3305f570a36804fca494a70a4125221) | Integration testing sample |
-| 5 | 2025-12-12 23:19:45 | [3a1bf03](https://github.com/tuxtor/devsecops-oci-workshop/commit/3a1bf03f4080030ebfdf62dad5741f5968d88cb6) | Downgrading to Java 21 |
-| 6 | 2025-12-12 23:36:24 | [872235d](https://github.com/tuxtor/devsecops-oci-workshop/commit/872235d88fd28fc3f6946cd4fd00d6c423b16f38) | Spotbugs detection demo |
-| 7 | 2025-12-12 23:39:02 | [d959814](https://github.com/tuxtor/devsecops-oci-workshop/commit/d9598141f88c8f2ddc479b234f486f8fb6f292aa) | Making spotbugs happy |
-| 8 | 2025-12-12 23:45:11 | [ef407fe](https://github.com/tuxtor/devsecops-oci-workshop/commit/ef407fe2828252479b2a196a17652de94eaf6567) | Adding IP resource for docker testing |
-| 9 | 2025-12-12 23:48:44 | [1258360](https://github.com/tuxtor/devsecops-oci-workshop/commit/1258360a548e71a205e552423d1313f91fe39907) | Adding gitignore to hide sensitive data |
-| 10 | 2025-12-12 23:50:45 | [f4800e7](https://github.com/tuxtor/devsecops-oci-workshop/commit/f4800e757c619bf956ce7dede9687328feb63311) | Adding basic java action builder |
-| 11 | 2025-12-13 00:04:36 | [23f7471](https://github.com/tuxtor/devsecops-oci-workshop/commit/23f747128dbce54649233ce1b0899ffe8fcdeabb) | Adding Eclipse JKube support |
-| 12 | 2025-12-13 00:06:23 | [2b4a793](https://github.com/tuxtor/devsecops-oci-workshop/commit/2b4a79354c29c92c43e294f26fa55f5fd6acf4f9) | Adding shift-left analysis |
+| # | SHA | Message |
+|---|-----|---------|
+| 1 | [30dbf41](https://github.com/tuxtor/devsecops-oci-workshop/commit/30dbf41d55b273fce6498ca87ed0271a1bb75d2e) | Adding github codespace definition (\*initial commit\*) |
+| 2 | [7b182ba](https://github.com/tuxtor/devsecops-oci-workshop/commit/7b182ba7ec5122a3e17f4831da71a70f0387f901) | Adding github codespace definition |
+| 3 | [b64377c](https://github.com/tuxtor/devsecops-oci-workshop/commit/b64377c04ff41cdc3bec6eb2a195cf46af79457a) | Adding quarkus skeleton |
+| 4 | [b3848b0](https://github.com/tuxtor/devsecops-oci-workshop/commit/b3848b0ee3305f570a36804fca494a70a4125221) | Integration testing sample |
+| 5 | [3a1bf03](https://github.com/tuxtor/devsecops-oci-workshop/commit/3a1bf03f4080030ebfdf62dad5741f5968d88cb6) | Downgrading to Java 21 |
+| 6 | [872235d](https://github.com/tuxtor/devsecops-oci-workshop/commit/872235d88fd28fc3f6946cd4fd00d6c423b16f38) | Spotbugs detection demo |
+| 7 | [d959814](https://github.com/tuxtor/devsecops-oci-workshop/commit/d9598141f88c8f2ddc479b234f486f8fb6f292aa) | Making spotbugs happy |
+| 8 | [ef407fe](https://github.com/tuxtor/devsecops-oci-workshop/commit/ef407fe2828252479b2a196a17652de94eaf6567) | Adding IP resource for docker testing |
+| 9 | [1258360](https://github.com/tuxtor/devsecops-oci-workshop/commit/1258360a548e71a205e552423d1313f91fe39907) | Adding gitignore to hide sensitive data |
+| 10 | [f4800e7](https://github.com/tuxtor/devsecops-oci-workshop/commit/f4800e757c619bf956ce7dede9687328feb63311) | Adding basic java action builder |
+| 11 | [23f7471](https://github.com/tuxtor/devsecops-oci-workshop/commit/23f747128dbce54649233ce1b0899ffe8fcdeabb) | Adding Eclipse JKube support |
+| 12 | [2b4a793](https://github.com/tuxtor/devsecops-oci-workshop/commit/2b4a79354c29c92c43e294f26fa55f5fd6acf4f9) | Adding shift-left analysis |
 
 ## Table of Contents
 
@@ -102,9 +102,9 @@ The key files are:
 
 ```
 quarkus-cloud-native-workload/
-├── . dockerignore
-├── . gitignore
-├── . mvn/
+├── .dockerignore
+├── .gitignore
+├── .mvn/
 ├── mvnw
 ├── mvnw.cmd
 ├── pom.xml
@@ -112,7 +112,7 @@ quarkus-cloud-native-workload/
 ├── src/
 │   ├── main/
 │   │   ├── docker/
-│   │   │   ├── Dockerfile. jvm
+│   │   │   ├── Dockerfile.jvm
 │   │   │   ├── Dockerfile.legacy-jar
 │   │   │   ├── Dockerfile.native
 │   │   │   └── Dockerfile.native-micro
@@ -136,11 +136,11 @@ quarkus-cloud-native-workload/
 
 <dependencies>
     <dependency>
-        <groupId>io. quarkus</groupId>
+        <groupId>io.quarkus</groupId>
         <artifactId>quarkus-smallrye-health</artifactId>
     </dependency>
     <dependency>
-        <groupId>io. quarkus</groupId>
+        <groupId>io.quarkus</groupId>
         <artifactId>quarkus-rest</artifactId>
     </dependency>
     <dependency>
@@ -164,7 +164,7 @@ package com.vorozco;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
-import jakarta. ws.rs.core.MediaType;
+import jakarta.ws.rs.core.MediaType;
 
 @Path("/hello")
 public class GreetingResource {
@@ -186,7 +186,7 @@ package com.vorozco;
 
 import org.eclipse.microprofile.health. HealthCheck;
 import org.eclipse.microprofile.health. HealthCheckResponse;
-import org. eclipse.microprofile.health. Liveness;
+import org.eclipse.microprofile.health. Liveness;
 
 @Liveness
 public class MyLivenessCheck implements HealthCheck {
@@ -207,7 +207,7 @@ public class MyLivenessCheck implements HealthCheck {
 package com.vorozco;
 
 import io.quarkus.test.junit.QuarkusTest;
-import org. junit.jupiter.api.Test;
+import org.junit.jupiter.api.Test;
 
 import static io.restassured. RestAssured.given;
 import static org.hamcrest.CoreMatchers.is;
@@ -272,7 +272,7 @@ package com.vorozco;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.QueryParam;
-import jakarta.ws. rs.Produces;
+import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 import java.util.ArrayList;
 import java.util.List;
@@ -304,7 +304,7 @@ public class FibonacciResource {
 ```java
 package com.vorozco;
 
-import io.quarkus.test. junit.QuarkusTest;
+import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
@@ -358,7 +358,7 @@ Add this plugin configuration to the `<build><plugins>` section:
 <plugin>
     <groupId>com.github.spotbugs</groupId>
     <artifactId>spotbugs-maven-plugin</artifactId>
-    <version>4.9.8. 2</version>
+    <version>4.9.8.2</version>
     <dependencies>
         <dependency>
             <groupId>com.github.spotbugs</groupId>
@@ -461,7 +461,7 @@ package com.vorozco;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
-import jakarta.ws.rs.core. MediaType;
+import jakarta.ws.rs.core.MediaType;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
@@ -488,9 +488,9 @@ public class IpResource {
 package com.vorozco;
 
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers. anyOf;
+import static org.hamcrest.Matchers.anyOf;
 import static org.hamcrest.Matchers.is;
-import static org.hamcrest. Matchers.matchesPattern;
+import static org.hamcrest.Matchers.matchesPattern;
 
 import io.quarkus.test.junit.QuarkusTest;
 import org. junit.jupiter.api.Test;
@@ -571,7 +571,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses:  actions/checkout@v4
+        uses: actions/checkout@v4
       - name: Set up JDK 21
         uses: actions/setup-java@v4
         with:
