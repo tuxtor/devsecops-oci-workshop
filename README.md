@@ -59,15 +59,27 @@ That's it, just fork it to your own GitHub account by clicking the "Fork" button
 
 **You can clone or open this project directly in GitHub Codespaces**
 
-Then, inside your repository, navigate to the commit `b64377c`
+Then, inside your repository, navigate to the commit `7b182ba`
 
 ```bash
-git checkout b64377c
+git reset --hard 7b182ba
 ```
 You can always reset the repository with 
 
 ```bash
 git reset --hard <commit-sha>
+```
+
+Install quarkus CLI if you don't have it yet:
+
+```bash
+curl -Ls https://sh.quarkus.io | bash
+```
+
+You can install it via SDKMAN as well (SDKMAN is pre-installed in GitHub Codespaces):
+
+```bash
+sdk install quarkus
 ```
 
 ## Step 3: Creating Quarkus Application Skeleton
@@ -221,7 +233,18 @@ cd quarkus-cloud-native-workload
 ./mvnw quarkus:dev
 ```
 
-Access the dev UI at `http://localhost:8080/q/dev/`
+Access the dev UI at `http://localhost:8080/q/dev/` (on localhost)
+
+Or access the endpoints directly:
+
+```bash
+curl http://localhost:8080/hello
+# Returns: Hello from Quarkus REST
+curl http://localhost:8080/q/health/live
+# Returns: {"status":"UP","checks":[{"name":"alive","status":"UP"}]}
+curl http://localhost:8080/q/metrics
+# Returns: Prometheus metrics
+```
 
 **What you've built**:
 - RESTful web service with JAX-RS
@@ -496,6 +519,12 @@ public class IpResourceTest {
 }
 ```
 
+### Build the container
+
+```bash
+docker build -f src/main/docker/Dockerfile.jvm -t quarkus/quarkus-cloud-native-workload-jvm .
+```
+
 ### Test in different environments
 
 ```bash
@@ -504,7 +533,7 @@ public class IpResourceTest {
 curl http://localhost:8080/ip
 
 # Docker container (after building)
-docker run -p 8080:8080 your-image
+docker run -p 8080:8080 quarkus/quarkus-cloud-native-workload-jvm
 curl http://localhost:8080/ip
 ```
 
